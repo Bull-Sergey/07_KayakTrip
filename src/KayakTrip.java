@@ -16,9 +16,9 @@ public class KayakTrip {
         for (int i = 0; i < masses.length; i++) {
             masses[i] = scanner.nextInt();
         }
-
         // Сортировка весов по возрастанию
         Arrays.sort(masses);
+
         // Подсчет количества байдарок
         int kayaksCount = getKolkayaks(masses, maxLoadCapacity);
 
