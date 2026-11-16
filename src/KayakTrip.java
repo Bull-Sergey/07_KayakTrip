@@ -21,18 +21,18 @@ public class KayakTrip {
         // Сортировка масс по возрастанию
         Arrays.sort(masses);
 
-        int left = 0;
-        int right = n - 1;
+        int lightWeight = 0;
+        int heavyWeight = n - 1;
         int kayaksCount = 0;
 
-        while (left <= right) {
+        while (lightWeight <= heavyWeight) {
             // Если самый легкий и самый тяжелый могут плыть вместе
-            if (masses[left] + masses[right] <= d) {
-                left++; // Легкий садится в байдарку
-                right--; // Тяжелый садится в ту же байдарку (или они вдвоем)
+            if (masses[lightWeight] + masses[heavyWeight] <= d) {
+                lightWeight++; // Легкий садится в байдарку
+                heavyWeight--; // Тяжелый садится в ту же байдарку (или они вдвоем)
             } else {
                 // Тяжелый не может плыть с легким, он плывет один
-                right--;
+                heavyWeight--;
             }
             kayaksCount++; // Байдарка использована
         }
